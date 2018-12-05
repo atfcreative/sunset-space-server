@@ -12,7 +12,7 @@ const paymentAPI = app => {
         res.send({ message: 'Howzit Stripe checkout server?!', timestamp: new Date().toISOString() })
     });
 
-    app.post('/', (req,res) => {
+    app.post('/', (req, res) => {
         console.log('Hitting this now...')
         stripe.charges.create(req.body, postStripeCharge(res));
     });

@@ -87,9 +87,6 @@ app.use(function (req, res, next) {
     }
 });
 
-//heroku
-// app.use(express.static(path.join(__dirname, "client", "build")))
-
 
 //====================================================
 /////// Stripe CORS stuff ////////////////
@@ -165,11 +162,7 @@ app.post('/api/avatar/:avatar_id', upload.single('file'), (req, res) => {
         
         res.json(updated);
     });
-    
-
-   
-
-  });
+});
 
 
 //====================================================
@@ -179,13 +172,7 @@ app.get('/', (req, res) => {
     res.send('<h1>&#128372; Moonwalking Micheal Jackson style...</h1>');
 });
 
-//heroku
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-// });
-
 //====================================================
 ///////START SERVER///////////////////////////////////
 //====================================================
 app.listen(port, () => console.log(`Server moonwalking like Mike J. on port ${port}`));
-
